@@ -1,18 +1,19 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.android.application'
 
-buildscript {
-    repositories {
-        jcenter()
-        google()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "edu.cmu.pocketsphinx.demo.wear"
+        minSdkVersion 24
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
     }
 }
 
-allprojects {
-    repositories {
-        jcenter()
-        google()
-    }
+dependencies {
+    implementation project(':aars')
+    implementation project(':models')
+    implementation 'com.google.android.support:wearable:2.1.0'
+    compileOnly 'com.google.android.wearable:wearable:2.1.0'
 }
